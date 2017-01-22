@@ -7,7 +7,7 @@ from fabric.context_managers import env
 from fabric.contrib.project import rsync_project
 
 code_dir = '/jalpc'
-exclude = ('.DS_Store', '*pyc', '.git', '.idea', '*sqlite3', 'migrations/versions/*')
+exclude = ('.DS_Store', '*pyc', '.git', '.idea', '*sqlite3', 'migrations')
 
 env.roledefs = {
     'vps': ['root@vps.jack003.com']

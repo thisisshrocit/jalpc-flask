@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VPS, vultr, Jack003">
+    <meta name="author" content="Jack003">
+
+    <title>Jack003</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link href="/static/css/app-20170122.min.css" rel="stylesheet">
+    <!--<link href="/static/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet">-->
+    <!--<link href="/static/css/style.css" rel="stylesheet">-->
+</head>
+<body>
+
+<div class="header">
+    <div class="vert-text">
+        <img class="img-rounded" alt="Company Logo" width="81px" src="/static/img/Jack.jpg"/>
+        <h2>Kun Jia</h2>
+        <ul class="list-inline">
+            <li><a href="https://www.facebook.com/jiakunnj" target="_blank"><i class="fa fa-facebook-square fa-3x"></i></a></li>
+            <li><a href="https://github.com/JiaKunUp" target="_blank"><i class="fa fa-github-square fa-3x"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/kun-jia-991264a2/" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a></li>
+            <li><a href="mailto:me@jack003.com"><i class="fa fa-envelope-square fa-3x"></i></a></li>
+        </ul>
+        <br>
+        <a href="http://www.jack003.com" target="_blank" class="btn btn-top">Learn More</a>
+    </div>
+</div>
+
+<script src="/static/js/app-20170122.min.js"></script>
+<!--<script src="/static/js/jquery.js"></script>-->
+<!--<script src="/static/js/jquery.vegas.js"></script>-->
+<!--<script src="/static/js/bootstrap.js"></script>-->
+<script>
+    $.vegas('slideshow', {
+        delay: 5000,
+        backgrounds: [
+            {src: '/static/img/bk1.jpg', fade: 2000},
+            {src: '/static/img/bk2.jpg', fade: 2000},
+            {src: '/static/img/bk3.jpg', fade: 2000},
+            {src: '/static/img/bk4.jpg', fade: 2000},
+            {src: '/static/img/bk5.jpg', fade: 2000},
+            {src: '/static/img/bk6.jpg', fade: 2000},
+            {src: '/static/img/bk7.jpg', fade: 2000}
+        ]
+    })('overlay', {
+        src: '/static/img/overlay.png'
+    });
+
+</script>
+</body>
+</html>
