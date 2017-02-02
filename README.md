@@ -1,6 +1,9 @@
-## Flask API for Jalpc
+## Flask API for Jalpc & personal usage
 
-* Page view count - main.jalpc_count
+* Time
+* Page view count for <http://www.jack003.com>
+* Parse rss from rss URL
+* Request infomation
 
 
 ### Usage (ubuntu 14.04)

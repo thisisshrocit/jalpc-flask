@@ -21,16 +21,23 @@ def install():
     run('apt-get update && apt-get install -y python-pip python-dev uwsgi-plugin-python nginx')
     rsync_project(local_dir='requirements.txt', remote_dir=code_dir)
     with cd(code_dir):
-        run('pip install -r requirements.txt')
+        run('pip2.7 install -r requirements.txt')
         run('mv jalpc.conf /etc/nginx/sites-enabled/ && rm -f /etc/nginx/sites-enabled/default && service nginx reload')
         run('mkdir /home/www && chown -R www-data. /home/www')
         run('/usr/bin/uwsgi jalpc.ini')
 
 
 @roles('vps')
+def pip():
+    rsync_project(local_dir='requirements.txt', remote_dir=code_dir)
+    with cd(code_dir):
+        run('pip2.7 install -r requirements.txt')
+
+
+@roles('vps')
 def deploy():
     rsync_project(local_dir='.', remote_dir=code_dir, exclude=exclude)
-    run('uwsgi --reload /run/uwsgi.pid')
+    run('source ~/.jalpc-env && uwsgi --reload /run/uwsgi.pid')
 
 
 @roles('vps')

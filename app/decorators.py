@@ -1,12 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
 from functools import wraps
 from flask import request, current_app, jsonify
-import app
-
-app = app.create_app(os.getenv('FLASK_CONFIG') or 'default')
-domain_name = app.config['DOMAIN']
 
 
 def jsonp(f):
@@ -25,10 +20,12 @@ def jsonp(f):
     return decorated_function
 
 
-def allow_domain(func=None, domain=domain_name):
+def allow_domain(func=None):
     def decorator(func):
         @wraps(func)
         def returned_wrapper(*args, **kwargs):
+            app = current_app._get_current_object()
+            domain = app.config['DOMAIN']
             referrer = request.headers.get('Referer', '@x@')
             allow = False
             for i in domain:

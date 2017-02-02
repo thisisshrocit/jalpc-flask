@@ -30,7 +30,7 @@
                             <li>URL: <a href="{{ api.url }}" target="_blank">{{ api.url }}</a></li>
                             <li>Methos: {{ api.method }}</li>
                             <li>Parameters: {{ api.parameters }}</li>
-                            <li>Example Response: <code>{{ api.example_response }}</code></li>
+                            <li>Example Response: <code>{{ api.example_response | safe }}</code></li>
                         </ul>
                     </div>
                 </div>
