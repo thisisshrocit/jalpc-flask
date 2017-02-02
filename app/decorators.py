@@ -30,7 +30,11 @@ def allow_domain(func=None, domain=domain_name):
         @wraps(func)
         def returned_wrapper(*args, **kwargs):
             referrer = request.headers.get('Referer', '@x@')
-            if domain not in referrer:
+            allow = False
+            for i in domain:
+                if i in referrer:
+                    allow = True
+            if not allow:
                 return jsonify(msg='Domain is denied.', data=None), 400
             return func(*args, **kwargs)
         return returned_wrapper

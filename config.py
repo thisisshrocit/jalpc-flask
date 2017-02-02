@@ -23,7 +23,7 @@ class DevConfig(Config):
 
 
 class ProdConfig(Config):
-    DOMAIN = 'jack003.com'
+    DOMAIN = ['jack003', 'jarrekk']
     DEBUG = False
     # DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join('/jalpc/db', 'prod.sqlite3')

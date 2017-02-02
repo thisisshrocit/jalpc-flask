@@ -10,7 +10,6 @@ from ..models import JalpcPVCount
 
 
 @api.route('/')
-# @allow_domain
 def hello_world():
     return 'Hello World!'
 
