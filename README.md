@@ -3,7 +3,7 @@
 * Time
 * Page view count for <http://www.jack003.com>
 * Parse rss from rss URL
-* Request infomation
+* Request/IP infomation
 
 
 ### Usage (ubuntu 14.04)
