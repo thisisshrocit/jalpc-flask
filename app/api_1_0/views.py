@@ -1,27 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import datetime
+import feedparser
+import json
 
 from flask import jsonify
 
 from . import api
-from ..decorators import jsonp, allow_domain
-from ..models import JalpcPVCount
 
 
 @api.route('/')
 def hello_world():
-    return 'Hello World!'
+    return jsonify(result='success', message='Hi there, this is API for Jack.'), 200
 
 
 @api.route('/time')
 def get_time():
-    return jsonify(time=datetime.datetime.now())
+    return jsonify(result='success', time=datetime.datetime.now()), 200
 
 
-@api.route('/jalpc_count')
-@allow_domain
-@jsonp
-def jalpc_count():
-    cnt = JalpcPVCount.access()
-    return jsonify(msg='success', data=cnt)
+@api.route('/rss')
+def parse_rss():
+    d = feedparser.parse('http://www.jack003.com/feed.xml')
+    print d
+    print json.dumps(d)
+    return 'ok'
