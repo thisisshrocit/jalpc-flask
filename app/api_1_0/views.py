@@ -19,6 +19,7 @@ def index():
 
 
 @api_1_0.route('/time', methods=['GET'])
+@jsonp
 def get_time():
     return jsonify(status='success', data=datetime.datetime.now())
 

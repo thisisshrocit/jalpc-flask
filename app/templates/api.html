@@ -29,7 +29,7 @@
                             <li>Description: {{ api.desc }}</li>
                             <li>URL: <a href="{{ api.url }}" target="_blank">{{ api.url }}</a></li>
                             <li>Methos: {{ api.method }}</li>
-                            <li>Parameters: {{ api.parameters }}</li>
+                            <li>Parameters: <ul>{% for param in api.parameters %}<li>{{ param |safe }}</li>{% endfor %}</ul></li>
                             <li>Example Response: <code>{{ api.example_response | safe }}</code></li>
                         </ul>
                     </div>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import jsonify
+from flask import jsonify, request
 
 from . import api_1_0
 from ..decorators import jsonp, allow_domain
