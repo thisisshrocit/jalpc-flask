@@ -9,14 +9,13 @@ import requests
 from flask import jsonify, render_template, request, current_app
 
 from . import api_1_0
+from .constant import api_list
 from ..decorators import jsonp
 
 
 @api_1_0.route('/', methods=['GET'])
 def index():
-    with open('app/api_1_0/api.json') as f:
-        content = json.loads(f.read())
-    return render_template('api.html', content=content)
+    return render_template('api.html', content=api_list)
 
 
 @api_1_0.route('/time', methods=['GET'])
